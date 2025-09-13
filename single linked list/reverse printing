@@ -48,6 +48,7 @@ int main()
             break;
         }
         insert_at_head(head,tail,val);
-        print_reverse(head);
+  
     }
+      print_reverse(head);
 }
