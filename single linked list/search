@@ -1,0 +1,74 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+class Node
+{
+    public:
+    int val;
+    Node* next;
+
+    Node(int val)
+    {
+        this->next=NULL;
+        this->val=val;
+    }
+};
+void insert_at_tail(Node*&head,Node*&tail,int val)
+{
+    Node* newnode=new Node(val);
+    if(head==NULL)
+    {
+        head=newnode;
+        tail=newnode;
+        return;
+    }
+    tail->next=newnode;
+    tail=newnode;
+}
+int search_in_list(Node* head,int x)
+{
+    Node* temp=head;
+    int idx=0;
+    while(temp!=NULL)
+    {
+        if(temp->val==x)
+        {
+            return idx;
+        }
+        temp=temp->next;
+        idx++;
+    }
+    return -1;
+}
+
+int main()
+{
+
+
+int T;
+cin>>T;
+    while(T--)
+
+
+{
+Node*head=NULL;
+Node*tail=NULL;
+int val;
+while(true)
+
+    {
+        cin>>val;
+        if(val==-1)
+        {
+            break;
+        }
+        insert_at_tail(head,tail,val);
+    }
+    int x;
+    cin>>x;
+    int ans=search_in_list(head,x);
+    cout<<ans<<endl;
+}
+    return 0;
+}
+
